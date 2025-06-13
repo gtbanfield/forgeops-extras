@@ -41,7 +41,3 @@ pipeline:
                       APP_NAME: <+pipeline.name>
                     envVariables:
                       PLUGIN_SKIP_TLS_VERIFY: "true"
-                    resources:
-                      limits:
-                        cpu: "2"
-                        memory: 4Gi

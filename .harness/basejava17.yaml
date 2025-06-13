@@ -1,0 +1,28 @@
+inputSet:
+  pipeline:
+    identifier: forgeopsextras
+    properties:
+      ci:
+        codebase:
+          build:
+            spec:
+              branch: main
+            type: branch
+    stages:
+      - stage:
+          identifier: CI
+          type: CI
+          spec:
+            execution:
+              steps:
+                - step:
+                    identifier: BuildAndPushDockerRegistry_1
+                    type: BuildAndPushDockerRegistry
+                    spec:
+                      dockerfile: images/java-17/Dockerfile
+                      tags:
+                        - java-17
+  name: BaseJava17
+  identifier: BaseJava17
+  orgIdentifier: default
+  projectIdentifier: IDA

@@ -3,8 +3,7 @@ pipeline:
   identifier: forgeopsextras
   projectIdentifier: IDA
   orgIdentifier: default
-  tags:
-    ai_generated: "true"
+  tags: {}
   properties:
     ci:
       codebase:
@@ -28,22 +27,17 @@ pipeline:
               nodeSelector: {}
               os: Linux
           execution:
-            steps:
+            steps:                  
               - step:
                   type: BuildAndPushDockerRegistry
                   name: Nexus
                   identifier: BuildAndPushDockerRegistry_1
                   spec:
                     connectorRef: account.Nexus
-                    repo: 192.168.1.83:5000/repository/ping
+                    repo: 192.168.1.83:5000/repository/harness/client
                     tags: <+input>
                     dockerfile: <+input>
+                    buildArgs:
+                      APP_NAME: <+pipeline.name>
                     envVariables:
-                      PLUGIN_SKIP_TLS_VERIFY: "true"
-                    resources:
-                      limits:
-                        memory: 2Gi
-                        cpu: 1
-                  timeout: 10m
-            rollbackSteps: []
-  description: This pipeline was updated by Harness AI on 2025-06-16 20:59:12 UTC.
+                      PLUGIN_SKIP_TLS_VERIFY: "true"                          

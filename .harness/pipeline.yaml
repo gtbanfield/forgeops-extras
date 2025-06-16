@@ -43,6 +43,7 @@ pipeline:
                     resources:
                       limits:
                         memory: 2Gi
+                        cpu: 1
                   timeout: 10m
             rollbackSteps: []
-  description: This pipeline was updated by Harness AI on 2025-06-16 20:51:14 UTC.
+  description: This pipeline was updated by Harness AI on 2025-06-16 20:59:12 UTC.

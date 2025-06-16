@@ -3,7 +3,8 @@ pipeline:
   identifier: forgeopsextras
   projectIdentifier: IDA
   orgIdentifier: default
-  tags: {}
+  tags:
+    ai_generated: "true"
   properties:
     ci:
       codebase:
@@ -39,6 +40,9 @@ pipeline:
                     dockerfile: <+input>
                     envVariables:
                       PLUGIN_SKIP_TLS_VERIFY: "true"
+                    resources:
+                      limits:
+                        memory: 2Gi
                   timeout: 10m
-  delegateSelectors:
-    - kubernetes-delegate-account
+            rollbackSteps: []
+  description: This pipeline was updated by Harness AI on 2025-06-16 20:51:14 UTC.

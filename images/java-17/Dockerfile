@@ -38,7 +38,7 @@ RUN mkdir -p /opt/async-profiler && \
 FROM debian:bullseye-slim
 
 COPY --from=JDK /opt /opt
-COPY Dockerfile /Dockerfile.java-17
+#COPY Dockerfile /Dockerfile.java-17
 
 # Add in ca-certificates needed for uploads to google cloud storage.
 RUN adduser --home "/home/forgerock" -uid 11111 --gid 0 forgerock --disabled-password --gecos "forgerock user" && \
